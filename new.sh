@@ -13,8 +13,7 @@ db_name="wp`date +%s`"
 db_user=$db_name
 db_password=`date |md5sum |cut -c '1-12'`
   
-sudo  mkdir /var/www/$domain_name/
-sudo chown -R $USER:$USER /var/www/$domain_name
+
 
 cat >/etc/apache2/sites-available/$domain_name.conf <<EOL
 <VirtualHost *:80>
@@ -33,16 +32,4 @@ sudo a2enmod rewrite
 sudo a2ensite $domain_name
 sudo systemctl reload apache2
 sudo systemctl restart apache2
-cat >/var/www/$domain_name/index.html <<EOL
 
-<html>
-  <head>
-    <title>$domain_name website</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-
-    <p>This is the landing page of <strong>$domain_name</strong>.</p>
-  </body>
-</html>
-EOL
