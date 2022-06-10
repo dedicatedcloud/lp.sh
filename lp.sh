@@ -76,8 +76,7 @@ echo "alias wp='~/wp-cli.phar'" >> .bashrc
 apt update && apt autoremove -y
 apt clean
 
-curl -L -o 'new.sh'
-https://raw.githubusercontent.com/dedicatedcloud/lp.sh/main/new.sh
+https://raw.githubusercontent.com/dedicatedcloud/lp.sh/main/new.sh 
 
 chmod +x ~/new.sh
 mv ~/new.sh /usr/local/bin/new
