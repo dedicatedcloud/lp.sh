@@ -46,8 +46,3 @@ cat >/var/www/$domain_name/index.html <<EOL
   </body>
 </html>
 EOL
-
-wp core download --path=/var/www/$domain_name --locale=en_US
-wp config create --dbname=$db_name --dbuser=$db_name --dbpass=$db_password
-wp db create
-wp core install --url=$domain_name --title="$site_title" --admin_user=$user_name --admin_password=$user_password --admin_email=$domain_email
