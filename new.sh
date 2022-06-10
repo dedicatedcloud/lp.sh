@@ -12,7 +12,13 @@ echo -e "Please, provide us with your domain name: "
 db_name="wp`date +%s`"
 db_user=$db_name
 db_password=`date |md5sum |cut -c '1-12'`
-  
+
+sudo chown -R $USER:$USER /var/www/*
+wp core download --path=/var/www/$domain_name --locale=en_US
+wp config create --dbname=$db_name --dbuser=$db_name --dbpass=$db_password
+wp db create
+wp core install --url=$domain_name --title="$site_title" --admin_user=$user_name --admin_password=$user_password --admin_email=$domain_email
+
 
 
 cat >/etc/apache2/sites-available/$domain_name.conf <<EOL
