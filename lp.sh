@@ -75,3 +75,7 @@ mv wp-cli.phar /usr/local/bin/wp
 echo "alias wp='~/wp-cli.phar'" >> .bashrc
 apt update && apt autoremove -y
 apt clean
+chmod +x lp.sh/new.sh
+mv lp.sh/new.sh /usr/local/bin/
+
+echo "alias new='~/new.sh'" >> .bashrc
