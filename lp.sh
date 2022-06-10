@@ -80,6 +80,6 @@ curl -L -o 'new.sh'
 https://raw.githubusercontent.com/dedicatedcloud/lp.sh/main/new.sh
 
 chmod +x ~/new.sh
-mv ~/new.sh /usr/local/bin/
+mv ~/new.sh /usr/local/bin/new
 
-echo "alias new='~/new.sh'" >> .bashrc
+echo "alias new='~/usr/local/bin/new'" >> .bashrc
