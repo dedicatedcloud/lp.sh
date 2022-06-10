@@ -14,7 +14,7 @@ db_user=$db_name
 db_password=`date |md5sum |cut -c '1-12'`
   
 sudo  mkdir /var/www/$domain_name/
-sudo chown www-data: /var/www/$domain_name -R
+sudo chown -R $USER:$USER /var/www/$domain_name
 
 cat >/etc/apache2/sites-available/$domain_name.conf <<EOL
 <VirtualHost *:80>
