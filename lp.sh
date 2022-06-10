@@ -79,7 +79,7 @@ apt clean
 curl -L -o 'new.sh'
 https://raw.githubusercontent.com/dedicatedcloud/lp.sh/main/new.sh
 
-chmod +x lp.sh/new.sh
-mv lp.sh/new.sh /usr/local/bin/
+chmod +x ~/new.sh
+mv ~/new.sh /usr/local/bin/
 
 echo "alias new='~/new.sh'" >> .bashrc
