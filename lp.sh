@@ -1,4 +1,8 @@
 #!/bin/bash
+echo -e "Please, provide us with a user name: "
+  read user_name
+  echo -e "Please, provide us with a password: "
+  read password
 P_IP="`wget http://ipinfo.io/ip -qO -`"
 echo $P_IP
 apt update && apt -y upgrade && apt -y install ufw
@@ -82,3 +86,22 @@ chmod +x new.sh
 mv new.sh /usr/local/bin/new
 
 echo "alias new='~/usr/local/bin/new'" >> .bashrc
+
+adduser $user_name <<EOF
+$password
+$password
+#
+#
+#
+#
+y
+y
+EOF
+
+usermod -aG sudo $user_name
+
+su $user_name
+
+cd /
+
+sudo apt update
