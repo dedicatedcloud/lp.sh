@@ -14,8 +14,8 @@ db_user=$db_name
 db_password=`date |md5sum |cut -c '1-12'`
 
 sudo chown -R $USER:$USER /var/www/html
-cd /var/www/html/$domain_name
-wp core download
+cd /var/www/html
+wp core download --path=$domain_name
 wp core config --dbname=$db_name --dbuser=$db_name --dbpass=$db_password
 wp db create
 wp core install --url=https://$domain_name --title=$site_title --admin_user=$user_name --admin_email=$domain_email --admin_password=$password
