@@ -69,7 +69,7 @@ EOL
 sudo curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 sudo chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
-sudo echo "alias wp='~/wp-cli.phar'" >> .bashrc
+sudo echo "alias wp='/usr/local/bin/wp'" >> .bashrc
 sudo apt update && apt autoremove -y
 sudo apt clean
 
